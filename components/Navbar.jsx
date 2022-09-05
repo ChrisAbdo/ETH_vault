@@ -51,7 +51,7 @@ function Navbar({ account, Web3Handler }) {
               </ul>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>About</a>
             </li>
           </ul>
         </div>
