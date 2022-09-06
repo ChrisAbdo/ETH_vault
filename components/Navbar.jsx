@@ -26,7 +26,7 @@ function Navbar({ account, Web3Handler }) {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Home</a>
+              <a href="/">Home</a>
             </li>
             <li tabIndex={0}>
               <a className="justify-between">
@@ -41,26 +41,30 @@ function Navbar({ account, Web3Handler }) {
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
               </a>
-              <ul className="p-2">
-                <li>
-                  <a>Transfer</a>
+              <ul className="p-2 bg-base-100 ">
+                <li className="border-b">
+                  <a href="/transfer">Transfer</a>
                 </li>
                 <li>
-                  <a>Receive</a>
+                  <a href="/receive">Receive</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a>About</a>
+              <label htmlFor="my-modal-5" className=" modal-button">
+                Disconnect Wallet
+              </label>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">ABD0xChange</a>
+        <a href="/" className="btn btn-ghost normal-case text-xl">
+          Vaultr🔐
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <a>Home</a>
+            <a href="/">Home</a>
           </li>
           <li tabIndex={0}>
             <a>
@@ -77,15 +81,17 @@ function Navbar({ account, Web3Handler }) {
             </a>
             <ul className="p-2">
               <li>
-                <a>Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a>Receive</a>
+                <a href="/receive">Receive</a>
               </li>
             </ul>
           </li>
           <li>
-            <a>About</a>
+            <label htmlFor="my-modal-5" className=" modal-button">
+              Disconnect Wallet
+            </label>
           </li>
         </ul>
       </div>
@@ -104,6 +110,22 @@ function Navbar({ account, Web3Handler }) {
             </button>
           </div>
         )}
+      </div>
+      <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">To disconnect:</h3>
+          <p className="py-4">
+            Open Metamask and click on the "Connected" button with the green
+            dot. There you are able to disconnect your wallet since we are not
+            able to manually do it for you!
+          </p>
+          <div className="modal-action">
+            <label htmlFor="my-modal-5" className="btn">
+              Yay!
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   );

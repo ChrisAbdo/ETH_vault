@@ -130,7 +130,7 @@ function transfer() {
 
       const combined = `FROM: ${
         from.slice(0, 5) + "..." + from.slice(38, 42)
-      } --> TO: ${to.slice(0, 5) + "..." + to.slice(38, 42)} 
+      } --> TO: ${to.slice(0, 5) + "..." + to.slice(38, 42)} || 
       BALANCE: ${ethers.utils.formatEther(balance)}`;
 
       setItems([
@@ -160,10 +160,12 @@ function transfer() {
 
       {/* Web3 Stuff */}
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="mt-56 flex flex-col items-center justify-center">
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title text-3xl">Transfer</h2>
+            <h2 className="card-title text-3xl items-center text-center flex justify-center">
+              Transfer
+            </h2>
             <input
               type="text"
               id="input"
@@ -194,15 +196,17 @@ function transfer() {
       {/* Todo stuff */}
       <div className="pt-12"></div>
 
-      <ul className="pt-12">
-        <h1 className="text-4xl">Completed Transactions:</h1>
+      <ul className=" pt-12 flex flex-col items-center justify-center ">
+        {/* <a className="w-56 btn btn-primary" href="/receive">
+          Receive Funds
+        </a> */}
+        <h1 className="text-4xl flex items-center justify-center">
+          Recent Transactions:
+        </h1>
         {items
           .filter(({ done }) => !done)
           .map(({ id, message }) => (
-            <div
-              key={id}
-              className="alert alert-success shadow-lg mb-2 mt-2 cursor-pointer"
-            >
+            <div key={id} className="alert alert-success shadow-lg mb-2 mt-2">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
